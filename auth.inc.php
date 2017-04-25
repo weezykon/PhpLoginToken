@@ -1,4 +1,5 @@
 <?php
+	require('config/db.inc.php');
 	session_start();
 
 	function sec_session_start() {
@@ -10,7 +11,7 @@
 
 	    // Forces sessions to only use cookies.
 	    if (ini_set('session.use_only_cookies', 1) === FALSE) {
-	        header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
+	        header("Location: login.php?err=Could not initiate a safe session (ini_set)");
 	        exit();
 	    }
 
@@ -25,7 +26,7 @@
 	    session_regenerate_id();    // regenerated the session, delete the old one. 
 	}
 
-	if(!isset($_SESSION["token"])){
+	// if(!isset($_SESSION["token"])){
 		$_token = $_SESSION['token'];
 		$_username = $_SESSION['username'];
 		$query = "SELECT * FROM `users` WHERE username = '$_username'";
@@ -39,5 +40,5 @@
 			header("Location: login.php");
 			exit(); 
 		}
-	}
+	// }
 ?>

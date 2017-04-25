@@ -14,7 +14,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>City</title>
 
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
@@ -74,7 +74,8 @@
 	      					</div>
 	      					<div class="col-sm-12">
 	      						<h3><?php echo $firstname .' '. $lastname; ?></h3>
-	      						<h5><?php echo $username; ?></h5>
+                    <h5><?php echo $username; ?></h5>
+	      						<h5><?php echo $_SESSION['token']; ?></h5>
 	      					</div>
 	      				</div>
 	      			</div>
